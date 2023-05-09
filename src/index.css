@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.main{
+    background-image: linear-gradient(to right,rgba(0, 19, 128, 0.719),rgba(85, 87, 187, 0.808),rgba(128, 128, 209, 0.781)), url(./background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
