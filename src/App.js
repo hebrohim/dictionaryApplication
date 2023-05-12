@@ -31,7 +31,7 @@ const App = () => {
         setLoading(false)
       })
       .catch((error) => {
-        setMessage("please input a valid english word");
+        setMessage("oops!,check connection and try again!");
       });
     if (!userInput) {
       setMessage("please input a word!");
@@ -65,7 +65,7 @@ const App = () => {
       {/* <button onClick={play}>Boop!</button> */}
 
       <DetailsSection />
-      <p> {Message}</p>
+      <p className="text-center"> {Message}</p>
     </DictionaryContext.Provider>
   );
 };
