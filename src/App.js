@@ -14,6 +14,8 @@ const App = () => {
   const [wordDetails, setWordDetails] = useState([]);
   const [Message, setMessage] = useState("");
   const [loading, setLoading] = useState(false)
+const [synonym, setSynonym] = useState(false)
+
   // const [randomWords, setRandomWords] = useState([]);
   // const [randomWord, setRandomWord] = useState('');
 
@@ -58,7 +60,7 @@ const App = () => {
 //  console.log(randomWords)
   return (
     <DictionaryContext.Provider
-      value={{ userInput, setUserInput, Data, wordDetails,loading,setLoading}}
+      value={{ userInput, setUserInput, Data, wordDetails,loading,setLoading,synonym,setSynonym}}
     >
       <Header />
 

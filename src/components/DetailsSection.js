@@ -4,24 +4,27 @@ import loadingImage from "../loading.gif";
 import Footer from "../Footer";
 import Synonyms from "./Synonyms";
 const DetailsSection = () => {
-  const { wordDetails, loading, setLoading } = useContext(DictionaryContext);
+  
 
-  const [synonym, setSynonym] = useState(false)
 
+  const { wordDetails, loading, setLoading,synonym,setSynonym } = useContext(DictionaryContext);
   return (
     <section>
       {synonym?<Synonyms/>:
     <div className="bg-white rounded-t-2xl pt-2 px-10 relative top-[-20px]">
       {/* <p className="text-center">random word goes here</p> */}
-      <div className="flex justify-between">
+      
+      <div className="flex justify-between mt-5">
         
-        <button className="bg-zinc-500" onClick={()=>{setSynonym(true)}}>synonyms</button>
-        <button>phonetics</button>
+        <button className="font-semibold p-3 hover:bg-slate-800 hover:text-white rounded-lg" onClick={()=>{setSynonym(true)}}>synonyms</button>
+        <button className="font-semibold p-3 hover:bg-slate-800 hover:text-white rounded-lg">phonetics</button>
       </div>
+
       {loading ? (
         <div className="flex justify-center items-center">
           <img src={loadingImage} className="w-12" />
         </div>
+          
       ) : (
         wordDetails.map((word) => {
           console.log(word);
