@@ -4,11 +4,10 @@ import loadingImage from "../loading.gif";
 import Footer from "../Footer";
 import Synonyms from "./Synonyms";
 const DetailsSection = () => {
-  
 
-
-  const { wordDetails, loading, setLoading,synonym,setSynonym } = useContext(DictionaryContext);
+  const { wordDetails, loading, setLoading,synonym,setSynonym,soundUrl,setSoundUrl } = useContext(DictionaryContext);
   return (
+    
     <section>
       {synonym?<Synonyms/>:
     <div className="bg-white rounded-t-2xl pt-2 px-10 relative top-[-20px]">
@@ -16,8 +15,8 @@ const DetailsSection = () => {
       
       <div className="flex justify-between mt-5">
         
-        <button className="font-semibold p-3 hover:bg-slate-800 hover:text-white rounded-lg" onClick={()=>{setSynonym(true)}}>synonyms</button>
-        <button className="font-semibold p-3 hover:bg-slate-800 hover:text-white rounded-lg">phonetics</button>
+        <button className="font-semibold mb-5 p-2 hover:bg-slate-800 hover:text-white rounded-lg" onClick={()=>{setSynonym(true)}}>synonyms/Antonyms</button>
+        {/* <button className="font-semibold p-3 hover:bg-slate-800 hover:text-white rounded-lg">phonetics</button> */}
       </div>
 
       {loading ? (
@@ -27,8 +26,11 @@ const DetailsSection = () => {
           
       ) : (
         wordDetails.map((word) => {
-          console.log(word);
-          // console.log((word.meanings[0].definitions).length)
+          // console.log(word);
+          
+            setSoundUrl(word.phonetics[0].audio)
+        
+           
           return (
             <div className=" w-full bg-slate-700 text-white mb-5">
              <h1 className=" capitalize text-4xl text-white">{word.word}</h1>

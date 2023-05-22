@@ -22,6 +22,14 @@ const Synonyms = () => {
             })
             }</h1>
         })}
+
+<h1 className="text-4xl text-center text-slate-900 uppercase underline mt-10">Antonyms</h1>
+        {wordDetails.map((word)=>{
+            return <h1>{word.meanings[0].antonyms.map((antonym)=>{
+                return <li className="list-none text-center text-xl mb-3">{antonym}</li>
+            })
+            }</h1>
+        })}
       </div>
     
       

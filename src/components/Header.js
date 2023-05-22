@@ -1,13 +1,23 @@
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
 import { DictionaryContext } from "../App";
 import { FaSearch } from "react-icons/fa";
 import logo from "../logo.png";
+import { RxSpeakerLoud } from "react-icons/rx";
+//import useSound for audio
+import useSound from "use-sound";
+import ad from"./audio.mp3"
+
+
 const Header = () => {
-  const { userInput, setUserInput, Data, wordDetails } =
+  const { userInput, setUserInput, Data, wordDetails,soundUrl,setSoundUrl } =
     useContext(DictionaryContext);
 
+  //Audio
+  const [play] = useSound(`${soundUrl}`)
+ 
   return (
     <div className=" bg-blue-500 main  ">
+     
       <section className=" h-[5vh] p-2 flex items-center justify-around shadow-md shadow-black md:h-[8vh]">
         <div className="flex items-center">
           <img src={logo} style={{ width: "30px" }} />
@@ -28,12 +38,25 @@ const Header = () => {
           className="border-2 rounded-md py-2 text-white flex justify-center items-center font-medium hover:shadow-md hover:shadow-black hover:bg-blue-700 md:py-0 md:h-[50px] md:px-[9px] md:ml-2"
           onClick={() => {
             Data();
+          
           }}
         >
           <FaSearch className="mr-5" />
           Search
         </button>
+     
+        {/* <RxSpeakerLoud className="text-white text-4xl" />
+        <button onClick={play}>click for sound</button>
+      */}
       </section>
+      <div className="pt mt-[-3rem] pb-10">
+          
+          {wordDetails.map((word) => {
+            return <span className="text-white text-3xl flex items-center justify-center">{word.phonetic}</span>;
+          })}
+
+          
+        </div>
     </div>
   );
 };

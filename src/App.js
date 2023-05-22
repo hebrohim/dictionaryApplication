@@ -15,6 +15,8 @@ const App = () => {
   const [Message, setMessage] = useState("");
   const [loading, setLoading] = useState(false)
 const [synonym, setSynonym] = useState(false)
+const [soundUrl, setSoundUrl] = useState()
+
 
   // const [randomWords, setRandomWords] = useState([]);
   // const [randomWord, setRandomWord] = useState('');
@@ -35,6 +37,7 @@ const [synonym, setSynonym] = useState(false)
       .catch((error) => {
         setMessage("oops!,check connection and try again!");
       });
+   
     if (!userInput) {
       setMessage("please input a word!");
     }
@@ -60,7 +63,7 @@ const [synonym, setSynonym] = useState(false)
 //  console.log(randomWords)
   return (
     <DictionaryContext.Provider
-      value={{ userInput, setUserInput, Data, wordDetails,loading,setLoading,synonym,setSynonym}}
+      value={{ userInput, setUserInput, Data, wordDetails,loading,setLoading,synonym,setSynonym,soundUrl,setSoundUrl}}
     >
       <Header />
 
