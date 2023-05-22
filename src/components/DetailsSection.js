@@ -41,7 +41,7 @@ const DetailsSection = () => {
                 {" "}
                 {word.meanings[0].definitions.map((definition) => {
                   return (
-                    <li className=" list-decimal bg-slate-100 text-slate-900">
+                    <li className=" list-decimal bg-slate-100 text-xs text-slate-900 md:text-sm">
                       {definition.definition}
                     </li>
                   );

@@ -10,8 +10,8 @@ const Synonyms = () => {
     <div>
   <div className="flex justify-evenly">
         
-        <button className="bg-zinc-500" onClick={()=>{setSynonym(!synonym)}}>{synonym?"Definitions":null}</button>
-        <button>phonetics</button>
+        <button className="hover:bg-zinc-500 mt-2 p-2 rounded-md" onClick={()=>{setSynonym(!synonym)}}>{synonym?"Definitions":null}</button>
+        {/* <button>phonetics</button> */}
       </div>
 
       <div>

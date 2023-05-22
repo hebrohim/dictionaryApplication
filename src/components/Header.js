@@ -49,10 +49,10 @@ const Header = () => {
         <button onClick={play}>click for sound</button>
       */}
       </section>
-      <div className="pt mt-[-3rem] pb-10">
+      <div className="pt mt-[-3rem] pb-10 ">
           
           {wordDetails.map((word) => {
-            return <span className="text-white text-3xl flex items-center justify-center">{word.phonetic}</span>;
+            return <span className="text-white text-sm md:text-xl flex items-center justify-center">{word.meanings[0].partOfSpeech} :   {word.phonetic}</span>;
           })}
 
           
